@@ -7,4 +7,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          tar -C connector-definition -czvf connector-definition.tgz configuration.json model.json .hasura-connector
+          tar -C connector-definition -czvf connector-definition.tgz  model.json .hasura-connector
