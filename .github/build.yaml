@@ -1,0 +1,10 @@
+name: "Build"
+on: [release]
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          tar -C connector-definition -czvf connector-definition.tgz configuration.json model.json .hasura-connector
