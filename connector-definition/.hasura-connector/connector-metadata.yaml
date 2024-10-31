@@ -9,7 +9,7 @@ commands:
   update: |
     docker run \
     --entrypoint ndc-calcite-cli \
-    -e DATABRICKS_JDBC_URL=$DATABRICKS_JDBC_URL" \
+    -e DATABRICKS_JDBC_URL="$DATABRICKS_JDBC_URL" \
     -e HASURA_PLUGIN_CONNECTOR_CONTEXT_PATH \
     -v ${HASURA_PLUGIN_CONNECTOR_CONTEXT_PATH}:/etc/connector \
     -v ${HASURA_PLUGIN_CONNECTOR_CONTEXT_PATH}:/app/output:rw \
