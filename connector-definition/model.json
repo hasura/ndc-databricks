@@ -8,8 +8,8 @@
       "factory": "org.apache.calcite.adapter.jdbc.JdbcSchema$Factory",
       "operand": {
         "jdbcDriver": "com.databricks.client.jdbc.Driver",
-        "jdbcUrl": "{{DATABRICKS_JDBC_URL}}",
-        "jdbcPassword": "{{DATABRICKS_ACCESS_TOKEN}}",
+        "jdbcUrl": "{{DATABRICKS_JDBC_URL}}UID=token;",
+        "jdbcPassword": "${DATABRICKS_ACCESS_TOKEN}"
       }
     }
   ]
