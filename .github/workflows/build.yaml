@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Create tarball
         run: |
-          tar -C connector-definition -czvf connector-definition.tgz model.json .hasura-connector
+          tar -C connector-definition -czvf connector-definition.tgz model.json configuration.json .hasura-connector
 
       - name: Upload Release Asset
         uses: softprops/action-gh-release@v1
