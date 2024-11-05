@@ -5,11 +5,15 @@ supportedEnvironmentVariables:
   - name: DATABRICKS_JDBC_URL
     description: JDBC URL of the Databricks DB
     required: true
+  - name: DATABRICKS_ACCESS_TOKEN
+    description: Access token of the Databricks DB
+    required: true
 commands:
   update: |
     docker run \
     --entrypoint ndc-calcite-cli \
     -e DATABRICKS_JDBC_URL="$DATABRICKS_JDBC_URL" \
+    -e DATABRICKS_ACCESS_TOKEN="$DATABRICKS_ACCESS_TOKEN" \
     -e HASURA_PLUGIN_CONNECTOR_CONTEXT_PATH \
     -v ${HASURA_PLUGIN_CONNECTOR_CONTEXT_PATH}:/etc/connector \
     -v ${HASURA_PLUGIN_CONNECTOR_CONTEXT_PATH}:/app/output:rw \

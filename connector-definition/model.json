@@ -9,8 +9,7 @@
       "operand": {
         "jdbcDriver": "com.databricks.client.jdbc.Driver",
         "jdbcUrl": "{{DATABRICKS_JDBC_URL}}",
-        "jdbcSchema": "default",
-        "jdbcCatalog": "samples"
+        "jdbcPassword": "{{DATABRICKS_ACCESS_TOKEN}}",
       }
     }
   ]
