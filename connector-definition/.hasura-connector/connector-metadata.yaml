@@ -1,6 +1,6 @@
 packagingDefinition:
   type: PrebuiltDockerImage
-  dockerImage: ghcr.io/hasura/ndc-calcite:latest
+  dockerImage: ghcr.io/hasura/ndc-calcite:1.0.12
 supportedEnvironmentVariables:
   - name: DATABRICKS_JDBC_URL
     description: JDBC URL of the Databricks DB
@@ -8,16 +8,24 @@ supportedEnvironmentVariables:
   - name: DATABRICKS_ACCESS_TOKEN
     description: Access token of the Databricks DB
     required: true
+  - name: DATABRICKS_SCHEMA
+    description: Databricks Schema
+    required: true
+  - name: DATABRICKS_CATALOG
+      description: Databricks Catalog
+      required: true
 commands:
   update: |
     docker run \
     --entrypoint ndc-calcite-cli \
     -e DATABRICKS_JDBC_URL="$DATABRICKS_JDBC_URL" \
     -e DATABRICKS_ACCESS_TOKEN="$DATABRICKS_ACCESS_TOKEN" \
+    -e DATABRICKS_SCHEMA="$DATABRICKS_SCHEMA" \
+    -e DATABRICKS_CATALOG="$DATABRICKS_CATALOG" \
     -e HASURA_PLUGIN_CONNECTOR_CONTEXT_PATH \
     -v ${HASURA_PLUGIN_CONNECTOR_CONTEXT_PATH}:/etc/connector \
     -v ${HASURA_PLUGIN_CONNECTOR_CONTEXT_PATH}:/app/output:rw \
-    ghcr.io/hasura/ndc-calcite:latest update
+    ghcr.io/hasura/ndc-calcite:1.0.12 update
 dockerComposeWatch:
   - path: ./
     target: /app/output
