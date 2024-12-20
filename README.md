@@ -62,6 +62,8 @@ When the wizard runs, you'll be prompted to enter the following env vars necessa
 |-------------------------|--------------------------------|----------|
 | DATABRICKS_JDBC_URL     | JDBC URL of your Databricks DB | Yes      |
 | DATABRICKS_ACCESS_TOKEN | Personal access token          | Yes      |
+| DATABRICKS_SCHEMA       | Databricks Schema              | Yes      |
+| DATABRICKS_CATALOG      | Databricks Catalog             | Yes      |
 
 
 After the CLI initializes the connector, you'll need to:
