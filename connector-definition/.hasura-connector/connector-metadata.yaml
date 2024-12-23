@@ -5,9 +5,6 @@ supportedEnvironmentVariables:
   - name: DATABRICKS_JDBC_URL
     description: JDBC URL of the Databricks DB
     required: true
-  - name: DATABRICKS_ACCESS_TOKEN
-    description: Access token of the Databricks DB
-    required: true
   - name: DATABRICKS_SCHEMA
     description: Databricks Schema
     required: true
@@ -19,7 +16,6 @@ commands:
     docker run \
     --entrypoint ndc-calcite-cli \
     -e DATABRICKS_JDBC_URL="$DATABRICKS_JDBC_URL" \
-    -e DATABRICKS_ACCESS_TOKEN="$DATABRICKS_ACCESS_TOKEN" \
     -e DATABRICKS_SCHEMA="$DATABRICKS_SCHEMA" \
     -e DATABRICKS_CATALOG="$DATABRICKS_CATALOG" \
     -e HASURA_PLUGIN_CONNECTOR_CONTEXT_PATH \
