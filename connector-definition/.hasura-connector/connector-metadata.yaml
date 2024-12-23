@@ -12,8 +12,8 @@ supportedEnvironmentVariables:
     description: Databricks Schema
     required: true
   - name: DATABRICKS_CATALOG
-      description: Databricks Catalog
-      required: true
+    description: Databricks Catalog
+    required: true
 commands:
   update: |
     docker run \
