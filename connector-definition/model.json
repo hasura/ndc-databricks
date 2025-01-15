@@ -8,9 +8,9 @@
       "factory": "org.apache.calcite.adapter.jdbc.JdbcSchema$Factory",
       "operand": {
         "jdbcDriver": "com.databricks.client.jdbc.Driver",
-        "jdbcUrl": "{{DATABRICKS_JDBC_URL}}",
-        "jdbcSchema": "{{DATABRICKS_SCHEMA}}",
-        "jdbcCatalog": "{{DATABRICKS_CATALOG}}"
+        "jdbcUrl": "${DATABRICKS_JDBC_URL}",
+        "jdbcSchema": "${DATABRICKS_SCHEMA}",
+        "jdbcCatalog": "${DATABRICKS_CATALOG}"
       }
     }
   ]
